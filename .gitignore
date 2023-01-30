@@ -1,0 +1,8 @@
+.DS_Store
+
+.cache/
+.vscode-server/
+.gitconfig
+
+home/work/*
+!.vscode
