@@ -3,7 +3,7 @@
 {
 	"name": "compEnv",
 	"dockerComposeFile": "../compose.yml",
-	"service": "env",
+	"service": "dev",
 	"workspaceFolder": "/home/work",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.

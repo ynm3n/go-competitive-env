@@ -1,6 +1,5 @@
 services:
-  env:
-    container_name: compEnv
+  dev:
     image: go-competitive-env
     build:
       context: .
