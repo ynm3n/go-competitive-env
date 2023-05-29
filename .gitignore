@@ -3,3 +3,5 @@
 .cache/
 .vscode-server/
 .gitconfig
+
+work/main.go
