@@ -4,8 +4,9 @@
 
 FROM golang:latest
 
-COPY work/go.mod work/go.sum /go/
+COPY work/go.mod work/go.sum /
 RUN --mount=type=cache,target=/go/pkg/mod --mount=type=cache,target=/root/.cache/go-build <<EOF
+    cd /
     go mod download all
     rm go.mod go.sum
 
