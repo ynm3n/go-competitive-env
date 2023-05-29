@@ -2,6 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/go
 {
 	"name": "go-cp",
+	"remoteUser": "${localEnv:USER:vsc}",
 	"build": {"dockerfile": "../Dockerfile"},
 	"workspaceMount": "source=${localWorkspaceFolder}/work,target=/workspace/,type=bind,consistency=cached",
 	"workspaceFolder": "/workspace",
@@ -10,16 +11,13 @@
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": "true",
 			"configureZshAsDefaultShell": "true",
-			"username": "root",
+			"username": "${localEnv:USER:vsc}",
+			"userUid": "1000",
+			"userGid": "1000",
 			"upgradePackages": "true"
-		}
-	},
-
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"golang.go"
-			]
+		},
+		"ghcr.io/devcontainers/features/go:1": {
+			"version": "none"
 		}
 	}
 }
