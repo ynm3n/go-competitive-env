@@ -1,21 +1,20 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
 {
-	"name": "compEnv",
-	"dockerComposeFile": "../compose.yml",
-	"service": "env",
-	"workspaceFolder": "/home/work",
+	"name": "go-cp",
+	"build": {"dockerfile": "../Dockerfile"},
+	"workspaceMount": "source=${localWorkspaceFolder}/work,target=/workspace/,type=bind,consistency=cached",
+	"workspaceFolder": "/workspace",
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": "true",
+			"configureZshAsDefaultShell": "true",
+			"username": "root",
+			"upgradePackages": "true"
+		}
+	},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Uncomment the next line to run commands after the container is created.
-	// "postCreateCommand": "cat /etc/os-release",
-
-	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -23,7 +22,4 @@
 			]
 		}
 	}
-
-	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "ynm"
 }
