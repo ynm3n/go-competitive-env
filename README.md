@@ -1,43 +1,64 @@
 # これはなに
-Goで競プロに参加する時に使うコンテナ。VSCodeのDevcontainerで使うことを想定。ただしDocker関連はできる限りVSCodeに依存しないように書いたつもり。
+- Go で競プロの問題を解く時に使うコンテナ
+- VSCode と Dev Container を使っています
 
-# Go version
-golang:latest (Docker Hubの公式イメージ)
+# インストールされる Go のバージョン
+- latest
+  - [Docker の公式イメージ](https://hub.docker.com/_/golang)から取ってる
 
-# つかいかた(beta)
-- 以下を用意
-  - VSCode
-  - Docker
-  - Dev Containers
-    - VSCodeの拡張機能
-  - このリポジトリをクローン
-- クローンしたこのリポジトリをVSCodeで開く
-- 左下の"><"を押す
-- "Reopen in Container"を実行
-- 終わり！
+# 必要なもの
+- Mac
+  - 他の OS では試してない
+  - 動くかもしれないし、動かないかもしれない
+- Docker
+  - BuildKit が必要
+- VSCode
+- Dev Containers
+  - VSCode の拡張機能
 
+# 使い方
+1. 上述の「必要なもの」を準備
+2. このリポジトリをクローンして VSCode で開く
+3. `Dev Containers: Reopen in Container` を実行
+   - 方法1
+     - コマンドパレットで実行
+   - 方法2
+     - VSCode のウィンドウの左下にある "><" をクリック
+     - `Reopen in Container` を選択
+4. コードを書く
+
+# 動作確認環境
+- Mac
+  - OS
+    - MacOS 13.4
+  - CPU
+    - Apple M1
+  - Memory
+    - 16GB
+- Docker Desktop
+  - Version
+    - 4.19.0 (106363)
+  - Engine
+    - 23.0.5
+  - BuildKit
+    - 有効
+- VSCode
+  - Version
+    - 1.78.2
+- Dev Containers(VSCode Extension)
+  - Version
+    - v0.292.0(Preview)
+
+<!-- 
 # todo
-## 優先度高
-- ライブラリ関連
-  - 自作ライブラリのリポジトリを別に作る
-  - gottani
-- スニペット整理
-  - ライブラリとして扱ったほうがいいものが結構ある
-- aliasの整備
-  - これをやればcode runner要らなそう
-
-## 優先度中
-- ライセンス
-  - ちゃんとやりたいけど現状だと何もわからない
-- VSCodeの拡張機能を試す
-- ターミナルに出てくるユーザー名？の変更
-  - モチベに関わる(かもしれない)
-
-## 優先度低
-- code runner
-  - 無くてもいいかも？
+- 非 root として実行
+- スニペットの整理
+- エイリアスの整備
 - デバッグ、テストの環境
+  - code runner
   - onlinejudgetool
   - atcoder cli
-  - 自動でサンプルをテスト(できるか)？
-  - 言語アプデ後でも良さそう(環境変数が追加される)
+  - 自動でサンプルをテスト
+- コメントを書く
+- 英語でコメントを書き直す
+-->

@@ -3,6 +3,3 @@
 .cache/
 .vscode-server/
 .gitconfig
-
-home/work/*
-!.vscode
